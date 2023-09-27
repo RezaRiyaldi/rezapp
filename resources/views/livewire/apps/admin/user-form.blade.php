@@ -3,7 +3,7 @@
 
   <div class="row align-items-center my-2">
     <div class="col-md-2">
-      <label>Jabatan</label>
+      <label class='form-label'>Jabatan</label>
     </div>
     <div class="col-md-6">
       <select name="role_id" class="form-control">
@@ -21,7 +21,7 @@
 
   <div class="row">
     <div class="col-md-2">
-      <label>Password</label>
+      <label class='form-label'>Password</label>
     </div>
     <div class="col-md-6">
       <div class="input-group">

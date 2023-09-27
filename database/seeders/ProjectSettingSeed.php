@@ -16,6 +16,7 @@ class ProjectSettingSeed extends Seeder
     public function run()
     {
         ProjectSetting::create([
+            "project_name" => "Your system",
             "multi_login_device" => 1
         ]);
     }

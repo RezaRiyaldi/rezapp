@@ -1,10 +1,12 @@
 <?php
 
+use App\Http\Controllers\Apps\CategoryTransactionController;
 use App\Http\Controllers\Apps\DashboardController;
 use App\Http\Controllers\Apps\ProjectSettingController;
 use App\Http\Controllers\Apps\RoleController;
 use App\Http\Controllers\Apps\UserController;
 use App\Http\Controllers\Auth\LoginController;
+use App\Models\CategoryTransaction;
 use App\Models\SessionToken;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -49,4 +51,7 @@ Route::middleware(["auth", "check_session_token"])->group(function () {
 
   Route::get("/app/settings", [ProjectSettingController::class, "index"])->name("app.settings.index")->middleware("check_authorized:005S");
   Route::put("/app/settings", [ProjectSettingController::class, "update"])->name("app.settings.update")->middleware("check_authorized:005S");
+
+  Route::get("/app/category-transaction", [CategoryTransactionController::class, "index"]);
+  Route::resource("/app/category-transaction", CategoryTransactionController::class, ["as" => "app"]);
 });

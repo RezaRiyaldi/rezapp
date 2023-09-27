@@ -33,7 +33,7 @@
 
 <div class="row align-items-center my-2">
   <div class="col-md-4">
-    <label>Daerah</label>
+    <label class='form-label'>Daerah</label>
   </div>
   <div class="col-md-6 parent-search-region">
     <input autocomplete="off" type="text" class="form-control" name="region_name" value="{{ $value ?? '' }}" placeholder="Cari daerah...">

@@ -17,7 +17,7 @@ class ProjectSettingController extends Controller
     $data = [
       "setting" => ProjectSetting::query()->first()
     ];
-    return $this->view_admin("admin.project-settings.index", "Setting", $data, TRUE);
+    return $this->view_admin("admin.project-settings.index", "Settings", $data, TRUE);
   }
 
   /**
@@ -71,7 +71,10 @@ class ProjectSettingController extends Controller
   public function update(Request $request)
   {
     ProjectSetting::query()->where("id", 1)->update([
-      "multi_login_device" => $request->has("multi_login_device") ? 1 : 0
+      "multi_login_device" => $request->has("multi_login_device") ? 1 : 0,
+      "project_name" => $request->project_name ?? '-',
+      "from_date" => $request->from_date ?? NULL,
+      "to_date" => $request->to_date ?? date('Y')
     ]);
 
     $response = response_success_default("Berhasil update setting!", FALSE, route("app.settings.index"));

@@ -2,7 +2,7 @@
 
 <div class="row align-items-center my-2">
   <div class="col-md-2">
-    <label>Jabatan</label>
+    <label class='form-label'>Jabatan</label>
   </div>
   <div class="col-md-6">
     <select name="role_id" class="form-control">

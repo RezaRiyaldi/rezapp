@@ -13,12 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('project_settings', function (Blueprint $table) {
+        Schema::create('category_transactions', function (Blueprint $table) {
             $table->id();
-            $table->string('project_name');
-            $table->tinyInteger("multi_login_device")->default(1);
-            $table->string('from_date', 4)->nullable();
-            $table->string('to_date', 4)->nullable();
+            $table->string('category');
+            $table->text('description')->nullable();
             $table->timestamps();
         });
     }
@@ -30,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('project_settings');
+        Schema::dropIfExists('category_transactions');
     }
 };
